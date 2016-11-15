@@ -9,12 +9,12 @@ abstract class AbstractPresenter
     /**
      * @var \Illuminate\Database\Eloquent\Model
      */
-    private $model;
+    protected $model;
 
     /**
      * @var \BrianFaust\AutoPresenter\Decorator
      */
-    private $decorator;
+    protected $decorator;
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model

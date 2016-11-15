@@ -4,6 +4,7 @@ namespace BrianFaust\AutoPresenter;
 
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\Paginator;
+use Illuminate\Database\Eloquent\Model;
 
 class Decorator
 {
@@ -67,6 +68,8 @@ class Decorator
             }
         }
 
+        $model = $this->decorateRelations($model);
+
         return new $presenter($model, $this);
     }
 
@@ -86,5 +89,29 @@ class Decorator
         }
 
         return $models;
+    }
+
+    /**
+     * Decorate relations with a presenter class.
+     *
+     * @param mixed $models
+     *
+     * @return \Illuminate\Database\Eloquent\Model
+     */
+    public function decorateRelations($model) : Model
+    {
+        if (!$model->getRelations()) {
+            return $model;
+        }
+
+        $relations = [];
+
+        foreach ($model->getRelations() as $relation => $models) {
+            $relations[$relation][] = $this->decorate($models);
+        }
+
+        $model->setRelations($relations);
+
+        return $model;
     }
 }

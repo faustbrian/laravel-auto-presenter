@@ -25,4 +25,29 @@ abstract class AbstractPresenter
         $this->model = $model;
         $this->decorator = $decorator;
     }
+
+    /**
+     * @param string $property
+     *
+     * @return mixed
+     */
+    public function __get($property)
+    {
+        if (method_exists($this, $property)) {
+            return $this->{$property}();
+        }
+
+        return $this->model->{$property};
+    }
+
+    /**
+     * @param string $method
+     * @param array  $arguments
+     *
+     * @return mixed
+     */
+    public function __call(string $method, array $arguments)
+    {
+        return call_user_func_array([$this->model, $method], $arguments);
+    }
 }

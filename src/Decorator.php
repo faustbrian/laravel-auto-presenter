@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Eloquent Auto Presenter.
+ *
+ * (c) Brian Faust <hello@brianfaust.de>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace BrianFaust\AutoPresenter;
 
 use Illuminate\Support\Collection;
@@ -55,7 +64,7 @@ class Decorator
             return $this->decorateMany($model);
         }
 
-        if (!$model instanceof Presentable) {
+        if (! $model instanceof Presentable) {
             return $model;
         }
 
@@ -100,7 +109,7 @@ class Decorator
      */
     public function decorateRelations($model) : Model
     {
-        if (!$model->getRelations()) {
+        if (! $model->getRelations()) {
             return $model;
         }
 

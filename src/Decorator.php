@@ -11,9 +11,9 @@
 
 namespace BrianFaust\AutoPresenter;
 
-use Illuminate\Support\Collection;
 use Illuminate\Contracts\Pagination\Paginator;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
 
 class Decorator
 {
@@ -64,7 +64,7 @@ class Decorator
             return $this->decorateMany($model);
         }
 
-        if (! $model instanceof Presentable) {
+        if (!$model instanceof Presentable) {
             return $model;
         }
 
@@ -109,7 +109,7 @@ class Decorator
      */
     public function decorateRelations($model) : Model
     {
-        if (! $model->getRelations()) {
+        if (!$model->getRelations()) {
             return $model;
         }
 

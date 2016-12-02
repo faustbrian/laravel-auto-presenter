@@ -11,9 +11,9 @@
 
 namespace BrianFaust\AutoPresenter;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Collection;
 use Illuminate\Contracts\Routing\UrlRoutable;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 class Presenter implements UrlRoutable
 {

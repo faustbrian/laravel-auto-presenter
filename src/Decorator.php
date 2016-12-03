@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\AutoPresenter;
 
 use Illuminate\Contracts\Pagination\Paginator;
@@ -107,7 +109,7 @@ class Decorator
      *
      * @return \Illuminate\Database\Eloquent\Model
      */
-    public function decorateRelations($model) : Model
+    public function decorateRelations($model): Model
     {
         if (!$model->getRelations()) {
             return $model;

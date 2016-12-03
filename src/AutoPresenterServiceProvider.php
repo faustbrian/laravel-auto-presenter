@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\AutoPresenter;
 
 use Illuminate\Contracts\View\Factory;
@@ -33,7 +35,7 @@ class AutoPresenterServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register()
+    public function register(): void
     {
         $this->app->singleton('presenters', function () {
             return new Decorator();

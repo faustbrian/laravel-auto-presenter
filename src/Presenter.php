@@ -9,6 +9,8 @@
  * file that was distributed with this source code.
  */
 
+declare(strict_types=1);
+
 namespace BrianFaust\AutoPresenter;
 
 use Illuminate\Contracts\Routing\UrlRoutable;
@@ -86,7 +88,7 @@ class Presenter implements UrlRoutable
      *
      * @return string
      */
-    protected function getMethod(string $key) : string
+    protected function getMethod(string $key): string
     {
         if (method_exists($this, $method = $key)
          || method_exists($this, $method = Str::snake($key))
@@ -114,7 +116,7 @@ class Presenter implements UrlRoutable
      *
      * @return bool
      */
-    public function __isset(string $key) : bool
+    public function __isset(string $key): bool
     {
         return $this->model->__isset($key);
     }
@@ -124,7 +126,7 @@ class Presenter implements UrlRoutable
      *
      * @return array
      */
-    public function toArray() : array
+    public function toArray(): array
     {
         $attributes = collect($this->model->toArray());
 
@@ -138,7 +140,7 @@ class Presenter implements UrlRoutable
      *
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return json_encode($this->toArray());
     }
@@ -148,7 +150,7 @@ class Presenter implements UrlRoutable
      *
      * @return mixed
      */
-    public function getRouteKey() : string
+    public function getRouteKey(): string
     {
         return $this->model->getRouteKey();
     }
@@ -158,7 +160,7 @@ class Presenter implements UrlRoutable
      *
      * @return string
      */
-    public function getRouteKeyName() : string
+    public function getRouteKeyName(): string
     {
         return $this->model->getRouteKeyName();
     }

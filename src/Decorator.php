@@ -47,7 +47,7 @@ class Decorator
      *
      * @param string $class
      */
-    public function setGenericPresenter($class)
+    public function setGenericPresenter($class): void
     {
         $this->genericPresenter = $class;
     }
@@ -57,7 +57,7 @@ class Decorator
      *
      * @param string $namespace
      */
-    public function addNamespace($namespace)
+    public function addNamespace($namespace): void
     {
         array_unshift($this->proprietaryNamespaces, $namespace);
     }
@@ -69,7 +69,7 @@ class Decorator
      *
      * @return \BrianFaust\AutoPresenter\Presenter
      */
-    public function decorate($model)
+    public function decorate($model): Presenter
     {
         if ($model instanceof Collection || is_array($model) || $model instanceof Paginator) {
             return $this->decorateMany($model);

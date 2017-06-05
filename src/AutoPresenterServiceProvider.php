@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Eloquent Auto Presenter.
  *
@@ -36,7 +33,7 @@ class AutoPresenterServiceProvider extends ServiceProvider
     /**
      * Register the application services.
      */
-    public function register(): void
+    public function register()
     {
         $this->app->singleton('presenters', function () {
             return new Decorator();

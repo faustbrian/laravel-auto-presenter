@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Eloquent Auto Presenter.
  *
@@ -39,7 +36,7 @@ class Decorator
      *
      * @param string $class
      */
-    public function setGenericPresenter($class): void
+    public function setGenericPresenter($class)
     {
         $this->genericPresenter = $class;
     }
@@ -49,7 +46,7 @@ class Decorator
      *
      * @param string $namespace
      */
-    public function addNamespace($namespace): void
+    public function addNamespace($namespace)
     {
         array_unshift($this->proprietaryNamespaces, $namespace);
     }

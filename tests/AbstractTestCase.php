@@ -1,8 +1,5 @@
 <?php
 
-
-declare(strict_types=1);
-
 /*
  * This file is part of Eloquent Auto Presenter.
  *
@@ -14,7 +11,6 @@ declare(strict_types=1);
 
 namespace BrianFaust\Tests\AutoPresenter;
 
-use BrianFaust\AutoPresenter\AutoPresenterServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 abstract class AbstractTestCase extends AbstractPackageTestCase
@@ -28,6 +24,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     protected function getServiceProviderClass($app): string
     {
-        return AutoPresenterServiceProvider::class;
+        return \BrianFaust\AutoPresenter\AutoPresenterServiceProvider::class;
     }
 }

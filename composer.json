@@ -1,12 +1,12 @@
 {
-    "name": "faustbrian/eloquent-auto-presenter",
+    "name": "artisanry/eloquent-auto-presenter",
     "description": "Automatic View Presenter for Eloquent Models",
-    "keywords": ["laravel", "framework", "Laravel-AutoPresenter", "Laravel AutoPresenter", "Brian Faust", "faustbrian"],
+    "keywords": ["laravel", "framework", "Laravel-AutoPresenter", "Laravel AutoPresenter"],
     "license": "MIT",
     "authors": [{
         "name": "Brian Faust",
-        "email": "hello@brianfaust.me",
-        "homepage": "https://brianfaust.me"
+        "email": "hello@basecode.sh",
+        "homepage": "https://basecode.sh"
     }],
     "require": {
         "php": "^7.1",
@@ -19,12 +19,12 @@
     },
     "autoload": {
         "psr-4": {
-            "BrianFaust\\AutoPresenter\\": "src"
+            "Artisanry\\AutoPresenter\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "BrianFaust\\Tests\\AutoPresenter\\": "tests"
+            "Artisanry\\Tests\\AutoPresenter\\": "tests"
         }
     },
     "config": {
@@ -37,7 +37,7 @@
         },
         "laravel": {
             "providers": [
-                "BrianFaust\\AutoPresenter\\AutoPresenterServiceProvider"
+                "Artisanry\\AutoPresenter\\AutoPresenterServiceProvider"
             ]
         }
     },

@@ -5,13 +5,13 @@ declare(strict_types=1);
 /*
  * This file is part of Eloquent Auto Presenter.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\AutoPresenter;
+namespace Artisanry\AutoPresenter;
 
 use Illuminate\Contracts\Routing\UrlRoutable;
 use Illuminate\Support\Collection;
@@ -20,18 +20,18 @@ use Illuminate\Support\Str;
 class Presenter implements UrlRoutable
 {
     /**
-     * @var \BrianFaust\AutoPresenter\Presentable
+     * @var \Artisanry\AutoPresenter\Presentable
      */
     protected $model;
 
     /**
-     * @var \BrianFaust\AutoPresenter\Decorator
+     * @var \Artisanry\AutoPresenter\Decorator
      */
     protected $decorator;
 
     /**
-     * @param \BrianFaust\AutoPresenter\Presentable $model
-     * @param \BrianFaust\AutoPresenter\Decorator   $decorator
+     * @param \Artisanry\AutoPresenter\Presentable $model
+     * @param \Artisanry\AutoPresenter\Decorator   $decorator
      */
     public function __construct(Presentable $model, Decorator $decorator)
     {

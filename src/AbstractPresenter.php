@@ -5,13 +5,13 @@ declare(strict_types=1);
 /*
  * This file is part of Eloquent Auto Presenter.
  *
- * (c) Brian Faust <hello@brianfaust.de>
+ * (c) Brian Faust <hello@basecode.sh>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
 
-namespace BrianFaust\AutoPresenter;
+namespace Artisanry\AutoPresenter;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,13 +23,13 @@ abstract class AbstractPresenter
     protected $model;
 
     /**
-     * @var \BrianFaust\AutoPresenter\Decorator
+     * @var \Artisanry\AutoPresenter\Decorator
      */
     protected $decorator;
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param \BrianFaust\AutoPresenter\Decorator $decorator
+     * @param \Artisanry\AutoPresenter\Decorator $decorator
      */
     public function __construct(Model $model, Decorator $decorator)
     {

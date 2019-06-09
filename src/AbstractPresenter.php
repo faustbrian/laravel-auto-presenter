@@ -29,7 +29,7 @@ abstract class AbstractPresenter
 
     /**
      * @param \Illuminate\Database\Eloquent\Model $model
-     * @param \Artisanry\AutoPresenter\Decorator $decorator
+     * @param \Artisanry\AutoPresenter\Decorator  $decorator
      */
     public function __construct(Model $model, Decorator $decorator)
     {
